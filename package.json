@@ -4,7 +4,10 @@
   "readme": "PeerBeer Client",
   "repository": "https://github.com/HackStgt/BeerClient",
   "nativescript": {
-    "id": "cool.peerbeer.beerclient"
+    "id": "cool.peerbeer.beerclient",
+    "tns-ios": {
+      "version": "2.3.0"
+    }
   },
   "dependencies": {
     "@angular/common": "2.1.2",
