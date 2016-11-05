@@ -1,25 +1,23 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { OfferService } from '../../shared/offer.service';
 import { Offer } from '../../shared/offer';
 
 @Component({
     selector: 'offers',
     templateUrl: 'pages/offers/offers.html',
-    styleUrls: ['pages/offers/offers.css']
+    styleUrls: ['pages/offers/offers.css'],
+    providers: []
 })
-export class OffersPage {
+export class OffersPage implements OnInit {
 
-    public offers: Array<Offer>;
+    public offers: Offer[] = [];
 
-    constructor() {
-        console.log('CONSTRUCTOR BEGIN');
-        this.offers = new Array<Offer>();
+    constructor(private api: OfferService) { }
 
-        for (let i = 0; i < 10; i++) {
-            let o = new Offer();
-            this.offers.push(o);
-        }
-
-        console.log('CONSTRUCTOR END');
+    ngOnInit() {
+        let users = this.api.get<Offer[]>('/offers')
+            .then(offers => this.offers = offers)
+            .catch(error => console.log('ERROR: ' + error));
     }
+
 }
