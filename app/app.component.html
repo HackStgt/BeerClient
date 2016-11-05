@@ -1,7 +1,13 @@
-<StackLayout>
-    <Label text="Tap the button" class="title"></Label>
-    
-    <Button text="TAP" (tap)="onTap()"></Button>
+<TabView>
+    <StackLayout *tabItem="{title: 'First', iconSource: '~/icon.png'}">
+        <Label text="First tab item"></Label>
+    </StackLayout>
 
-    <Label [text]="message" class="message" textWrap="true"></Label>
-</StackLayout>
+    <StackLayout *tabItem="{title: 'Second'}">
+        <Label text="Second tab item"></Label>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Thrid'}">
+        <Label text="Third tab item"></Label>
+    </StackLayout>
+</TabView>
