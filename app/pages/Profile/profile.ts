@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { BarcodeScanner } from 'nativescript-barcodescanner';
+import {Page} from "ui/page";
+import {Label} from "ui/label";
 
 @Component({
     selector: 'Profile',
-    templateUrl: 'pages/profile.html',
-    styleUrls: ['pages/profile.css']
+    templateUrl: 'pages/Profile/profile.html',
+    styleUrls: ['pages/Profile/profile.css']
 })
 
+
 export class ProfilePage {
-
-
-    constructor(private barcodeScanner: BarcodeScanner) {
+    constructor(private barcodeScanner: BarcodeScanner,  private myPage: Page) {
         console.log('CONSTRUCTOR BEGIN');
 
 
@@ -22,11 +23,8 @@ export class ProfilePage {
             formats: "QR_CODE, EAN_13"
         }).then((result) => {
             // Note that this Promise is never invoked when a 'continuousScanCallback' function is provided
-            alert({
-                title: "Scan result",
-                message: "Format: " + result.format + ",\nValue: " + result.text,
-                okButtonText: "OK"
-            });
+            let kontolabel:Label = <Label>this.myPage.getViewById<Label>("kontolabel");
+            kontolabel.text = result.text;
         }, (errorMessage) => {
             console.log("No scan. " + errorMessage);
         }

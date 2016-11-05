@@ -4,7 +4,7 @@ import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { BarcodeScanner } from 'nativescript-barcodescanner';
 
-import { ProfilePage } from "./pages/profile"
+import { ProfilePage } from "./pages/Profile/profile"
 
 @NgModule({
     declarations: [AppComponent, ProfilePage],
