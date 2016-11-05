@@ -1,10 +1,10 @@
 {
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "NativeScript Application",
-  "repository": "<fill-your-repository-here>",
+  "description": "PeerBeer Client",
+  "license": "SEE LICENSE IN LICENSE",
+  "readme": "PeerBeer Client",
+  "repository": "https://github.com/HackStgt/BeerClient",
   "nativescript": {
-    "id": "org.nativescript.beerclient"
+    "id": "cool.peerbeer.beerclient"
   },
   "dependencies": {
     "@angular/common": "2.1.2",
