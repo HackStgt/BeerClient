@@ -3,7 +3,7 @@ import { getFile, getImage, getJSON, getString, request } from "http";
 import * as appSettings from "application-settings";
 
 @Injectable()
-export class ApiService {
+export abstract class ApiService {
 
     apiUrl: string;
 
