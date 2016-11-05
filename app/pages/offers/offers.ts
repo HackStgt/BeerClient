@@ -6,18 +6,22 @@ import { Offer } from '../../shared/offer';
     selector: 'offers',
     templateUrl: 'pages/offers/offers.html',
     styleUrls: ['pages/offers/offers.css'],
-    providers: []
+    providers: [OfferService]
 })
 export class OffersPage implements OnInit {
 
-    public offers: Offer[] = [];
+    public offers: Array<Offer> = [];
 
     constructor(private api: OfferService) { }
 
     ngOnInit() {
-        let users = this.api.get<Offer[]>('/offers')
-            .then(offers => this.offers = offers)
-            .catch(error => console.log('ERROR: ' + error));
+        this.api.get<Offer[]>('/offers')
+            .then(offers => {
+                console.info('API GET /offers: ' + offers);
+                this.offers = offers;
+            },
+            error => console.log('API REJECTED: ' + error))
+            .catch(error => console.error('API ERROR: ' + error));
     }
 
 }

@@ -7,7 +7,7 @@ import { Offer } from './Offer';
 export class OfferService extends ApiService {
 
     // GET: /offers
-    fetchAll(): Promise<Array<Offer>> {
-        return this.get<Array<Offer>>('/offers');
+    fetchAll(): Promise<Offer[]> {
+        return this.get<Offer[]>('/offers');
     }
 }
