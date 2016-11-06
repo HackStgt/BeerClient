@@ -10,7 +10,7 @@ import { Offer } from '../../shared/offer';
 })
 export class OffersPage implements OnInit {
 
-    public offers: Array<Offer> = [];
+    public offers: Array<Offer> = [new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150),new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150), new Offer("Titel", "Kategorie", 200, 150)];
 
     constructor(private api: OfferService) { }
 
