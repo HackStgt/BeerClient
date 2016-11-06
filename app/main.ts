@@ -5,12 +5,19 @@ import { AppComponent } from "./app.component";
 import { BarcodeScanner } from 'nativescript-barcodescanner';
 
 import { ProfilePage } from "./pages/Profile/profile"
+import { SalePage } from "./pages/sale/sale"
+
+import { ProductModalView } from "./pages/sale/productModal"
+import { BrandModalView } from "./pages/sale/brandModal"
 
 @NgModule({
-    declarations: [AppComponent, ProfilePage],
+    declarations: [AppComponent, 
+    ProfilePage, 
+    SalePage,ProductModalView, BrandModalView],
     bootstrap: [AppComponent],
     imports: [NativeScriptModule],
-    providers: [BarcodeScanner]
+    providers: [BarcodeScanner],
+    entryComponents: [ProductModalView, BrandModalView]
 })
 class AppComponentModule {}
 

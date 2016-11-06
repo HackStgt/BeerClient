@@ -1,0 +1,13 @@
+ <StackLayout modal-dialog-host>
+
+
+         <Button class="btn btn-primary btn-active" text="Enter Start Date" (tap)="createModelView('brand')"></Button>
+        <Label [text]='endDate | date:"MM/dd/yy"' textWrap="true"></Label>
+
+        <Button class="btn btn-primary btn-active" text="Enter Start Date" (tap)="createModelView('product')"></Button>
+        <Label [text]='endDate | date:"MM/dd/yy"' textWrap="true"></Label>
+
+
+
+<Button text="Offer" (tap)="onTap()" ></Button>
+ </StackLayout>
