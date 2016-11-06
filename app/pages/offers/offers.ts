@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OfferService } from '../../shared/offer.service';
 import { Offer } from '../../shared/offer';
 import { Router } from "@angular/router";
+import frameModule = require("ui/frame");
+var topmost = frameModule.topmost();
 
 @Component({
     selector: 'offers',
@@ -16,7 +18,14 @@ export class OffersPage implements OnInit {
     constructor(private api: OfferService, private router: Router) { }
 
     public openDetail(title){
-        this.router.navigate(["/list"])
+        var navigationEntry = {
+        moduleName: "DetailPage",
+        context: {info: title},
+        animated: false
+        };
+        console.log(navigationEntry.context.info);
+        console.log(title);
+        topmost.navigate(navigationEntry);
     }
 
     ngOnInit() {

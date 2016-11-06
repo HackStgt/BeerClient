@@ -3,6 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/platform";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { OffersPage } from "./pages/offers/offers";
+import { DetailPage } from "./pages/offers/detail";
 import { AppComponent } from "./app.component";
 
 import { BarcodeScanner } from 'nativescript-barcodescanner';
@@ -21,6 +22,7 @@ import { routes, navigatableComponents } from "./app.routing";
         AppComponent,
         OffersPage,
         ProfilePage,
+        DetailPage,
         SalePage, ProductModalView, BrandModalView
     ],
     bootstrap: [AppComponent],

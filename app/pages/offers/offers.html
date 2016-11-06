@@ -8,7 +8,7 @@
     </StackLayout>
     <ListView id="list" [items]='offers' class="list-group">
         <template let-item=' item ' >
-            <GridLayout class="list-group-item" (tap)="openDetail('item.title')">
+            <GridLayout class="list-group-item" (tap)="openDetail(item.title)">
                 <Label [text]="item.title"></Label>
             </GridLayout>
         </template>
