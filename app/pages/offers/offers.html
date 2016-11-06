@@ -1,5 +1,16 @@
-<ListView [items]='offers'>
-    <template let-item='item'>
-        <Label [text]="item.title"></Label>
-    </template>
-</ListView>
+<StackLayout>
+    <StackLayout id="banner">
+        <GridLayout columns="3, auto" rows="2, auto">
+            <Label id="balance" class="h3 text-center" col="0" row="0" text="200"></Label>
+            <Label id="currency" class="h5 text-center" col="0" row="1" text="BeerCoins"></Label>
+        </GridLayout>
+        
+    </StackLayout>
+    <ListView id="list" [items]='offers' class="list-group">
+        <template let-item=' item ' >
+            <GridLayout class="list-group-item" (tap)="openDetail('item.title')">
+                <Label [text]="item.title"></Label>
+            </GridLayout>
+        </template>
+    </ListView>
+</StackLayout>
