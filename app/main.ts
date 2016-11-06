@@ -19,6 +19,9 @@ import { BrandModalView } from "./pages/sale/brandModal"
     providers: [BarcodeScanner],
     entryComponents: [ProductModalView, BrandModalView]
 })
+
 class AppComponentModule {}
 
-platformNativeScriptDynamic().bootstrapModule(AppComponentModule);
+import { AppModule } from "./app.module";
+
+platformNativeScriptDynamic().bootstrapModule(AppModule);
