@@ -1,9 +1,9 @@
-import { LoginComponent } from "./pages/login/login.component";
+import { DetailPage } from "./pages/offers/detail";
 
 export const routes = [
-  { path: "", component: LoginComponent }
+  { path: "", component: DetailPage }
 ];
 
 export const navigatableComponents = [
-  LoginComponent
+  DetailPage
 ];
